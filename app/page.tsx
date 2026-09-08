@@ -1,23 +1,21 @@
-import { ArrowUpRight, Menu } from 'lucide-react';
-
 const treatments = [
   {
-    number: '01',
+    title: 'Massage',
+    image: 'massage.webp',
+    description:
+      'Hannah combines intuitive touch and remedial training—providing lasting results and a deeply restorative experience.',
+  },
+  {
     title: 'Cupping',
-    line: 'Create space. Restore flow.',
-    className: 'treatment-card--cupping',
+    image: 'cupping.webp',
+    description:
+      'Most massage is compression—by creating a vacuum and lifting the tissue, we create space so the tissues, blood and lymph can move. There is a reason why this therapy is favoured by elite athletes.',
   },
   {
-    number: '02',
-    title: 'Remedial',
-    line: 'Focused care for the way you move.',
-    className: 'treatment-card--remedial',
-  },
-  {
-    number: '03',
     title: 'Breathwork',
-    line: 'Slow down. Breathe deeper.',
-    className: 'treatment-card--breathwork',
+    image: 'breathwork.webp',
+    description:
+      'It all starts with the breath. Hannah uses guided techniques in her massage to promote the optimum state for healing and repair. Hannah also facilitates longer Holotropic (conscious, connected) breathwork sessions.',
   },
 ];
 
@@ -25,66 +23,30 @@ export default function Home() {
   return (
     <main className="site-shell">
       <header className="site-header">
-        <a className="brand" href="#" aria-label="H2O Breath and Bodywork home">
-          <img src="h2o-logo.png" alt="H2O Breath and Bodywork" />
-        </a>
-        <p className="location">Massage · Movement · Breath</p>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#treatments">Treatments</a>
-          <a href="#contact">Contact</a>
-          <a className="book-link" href="#contact">
-            Book a session <ArrowUpRight aria-hidden="true" size={15} />
-          </a>
-        </nav>
-        <button
-          className="menu-button"
-          type="button"
-          aria-label="Open menu"
-          disabled
-        >
-          <Menu aria-hidden="true" size={23} />
-        </button>
+        <img
+          className="logo"
+          src="h2o-logo.png"
+          alt="H2O Breath and Bodywork"
+        />
       </header>
 
-      <section className="hero" aria-labelledby="page-title">
-        <p className="eyebrow">Come back to your body</p>
-        <h1 id="page-title">
-          Feel <em>more</em> like you.
-        </h1>
-        <p className="hero-copy">
-          Grounded, intuitive bodywork to help you release tension, reconnect
-          and breathe a little easier.
-        </p>
-      </section>
-
-      <section className="treatments" id="treatments" aria-label="Treatments">
+      <section className="treatments" aria-label="Treatments">
         {treatments.map((treatment) => (
-          <a
-            href="#contact"
-            className={`treatment-card ${treatment.className}`}
+          <article
+            className="treatment-card"
             key={treatment.title}
+            tabIndex={0}
           >
-            <span className="card-art" aria-hidden="true">
-              <span>{treatment.number}</span>
-            </span>
-            <span className="card-copy">
-              <span>
-                <small>{treatment.line}</small>
-                <strong>{treatment.title}</strong>
-              </span>
-              <span className="card-arrow" aria-hidden="true">
-                <ArrowUpRight size={19} />
-              </span>
-            </span>
-          </a>
+            <img src={treatment.image} alt="" />
+            <div className="card-shade" />
+            <h2>{treatment.title}</h2>
+            <div className="card-description">
+              <h3>{treatment.title}</h3>
+              <p>{treatment.description}</p>
+            </div>
+          </article>
         ))}
       </section>
-
-      <footer className="site-footer" id="contact">
-        <p>H2O Breath &amp; Bodywork</p>
-        <a href="#">Instagram</a>
-        <a href="mailto:hello@h20bodywork.com">hello@h20bodywork.com</a>
-      </footer>
     </main>
   );
 }
