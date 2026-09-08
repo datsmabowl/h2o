@@ -2,9 +2,8 @@
 @import 'tailwindcss';
 
 :root {
-  --paper: #ffffff;
-  --ink: #183c2e;
-  --yellow: #d5ac00;
+  --paper: #f4e8ad;
+  --ink: #171717;
 }
 
 * {
@@ -61,21 +60,12 @@ body {
   width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
-  background: var(--ink);
+  border-radius: 1.25rem;
+  background: #171717;
   color: white;
   cursor: default;
   outline: 0;
   isolation: isolate;
-}
-
-.treatment-card::after {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  border: 0 solid var(--yellow);
-  pointer-events: none;
-  content: '';
-  transition: border-width 280ms ease;
 }
 
 .treatment-card > img {
@@ -95,8 +85,8 @@ body {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    transparent 45%,
-    rgba(10, 24, 18, 0.72) 100%
+    rgba(0, 0, 0, 0.03) 35%,
+    rgba(0, 0, 0, 0.58) 100%
   );
   transition: background-color 360ms ease;
 }
@@ -126,7 +116,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: clamp(1.35rem, 3vw, 3rem);
-  background: rgba(22, 61, 45, 0.9);
+  background: rgba(0, 0, 0, 0.62);
   opacity: 0;
   transform: translateY(1rem);
   transition:
@@ -136,7 +126,7 @@ body {
 
 .card-description h3 {
   margin: 0 0 clamp(0.65rem, 1.3vw, 1.1rem);
-  color: #ffe36b;
+  color: white;
   font-size: clamp(1.85rem, 2.7vw, 3rem);
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -149,16 +139,10 @@ body {
   line-height: 1.35;
 }
 
-.treatment-card:hover::after,
-.treatment-card:focus-visible::after,
-.treatment-card:focus::after {
-  border-width: 0.38rem;
-}
-
 .treatment-card:hover > img,
 .treatment-card:focus-visible > img,
 .treatment-card:focus > img {
-  filter: saturate(0.72);
+  filter: brightness(0.78);
   transform: scale(1.065);
 }
 
