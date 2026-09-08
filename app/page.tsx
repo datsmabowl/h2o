@@ -26,7 +26,7 @@ export default function Home() {
     <main className="site-shell">
       <header className="site-header">
         <a className="brand" href="#" aria-label="H2O Breath and Bodywork home">
-          <img src="/h2o-logo.png" alt="H2O Breath and Bodywork" />
+          <img src="h2o-logo.png" alt="H2O Breath and Bodywork" />
         </a>
         <p className="location">Massage · Movement · Breath</p>
         <nav className="desktop-nav" aria-label="Primary navigation">
